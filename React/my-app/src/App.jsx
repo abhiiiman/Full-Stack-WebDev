@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar title="TextUtils" aboutText="About TextUtils" />
-      <TextForm textTitle = "Enter your text here"/>
+      <TextForm textTitle = "Enter your text below"/>
     </>
   );
 }
