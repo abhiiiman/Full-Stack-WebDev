@@ -5,16 +5,16 @@ const TextForm = (props) => {
 
     const upperOnClick = () => {
         let upperText = inputText.toUpperCase();
-        setUpperText(upperText);
+        setInputText(upperText);
     }
 
     const lowerOnClick = () => {
         let lowerText = inputText.toLowerCase();
-        setUpperText(lowerText);
+        setInputText(lowerText);
     }
 
     const clearOnClick = () => {
-        setUpperText("");
+        setInputText("");
     }
 
     const readOnClick = () => {
@@ -23,26 +23,39 @@ const TextForm = (props) => {
         window.speechSynthesis.speak(msg);
     }
 
-    const handleOnChange = (event) => {
-        // console.log("TextArea has been changed!");
-        setUpperText(event.target.value)
+    const copyOnClick = () => {
+        var getText = document.getElementById("text-area");
+        getText.select();
+        navigator.clipboard.writeText(getText.value);
     }
 
-    const [inputText, setUpperText] = useState("");
+    const removeOnClick = () => {
+        let noExtraSpaceText = inputText.split(/[ ]+/); // regex
+        setInputText(noExtraSpaceText.join(" "));
+    }
+
+    const handleOnChange = (event) => {
+        // console.log("TextArea has been changed!");
+        setInputText(event.target.value)
+    }
+
+    const [inputText, setInputText] = useState("");
 
     return (
         <div className="container my-3">
 
             <div className="mb-3">
                 <label for="exampleFormControlTextarea1" className="form-label"><h2 className='my-heading'><strong>{props.textTitle}</strong></h2></label>
-                <textarea className="my-text-area form-control" value={inputText} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+                <textarea id = "text-area" className="my-text-area form-control" value={inputText} onChange={handleOnChange} rows="8"></textarea>
             </div>
 
             {/* buttons. */}
             <button className="my-btns btn" onClick={upperOnClick}>Convert to UpperCase</button>
             <button className="my-btns btn mx-2" onClick={lowerOnClick}>Convert to LowerCase</button>
-            <button className="my-btns btn md-2" onClick={clearOnClick}>Clear</button>
-            <button className="my-btns btn mx-2" onClick={readOnClick}>Read</button>
+            <button className="my-btns btn" onClick={removeOnClick}>Remove Extra Space</button>
+            <button className="my-btns btn mx-2" onClick={clearOnClick}>Clear</button>
+            <button className="my-btns btn" onClick={readOnClick}>Read</button>
+            <button className="my-btns btn mx-2" onClick={copyOnClick}>Copy</button>
 
             <div className="container my-3">
                 <h2 className='my-heading'><strong>Your Text Summary</strong></h2>
