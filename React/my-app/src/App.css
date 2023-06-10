@@ -1,26 +1,26 @@
 .light-theme {
-  --light-bg-color: #f5ebeb;
+  --light-bg-color: #27374D;
   --light-nav-color: #867070;
-  background-color: #f5ebeb;
+  background-color: #27374D;
 }
 
 .my-btns {
-  background-color: #867070;
+  background-color: #526D82;
   color: white;
 }
 
 .my-btns:hover{
-  background-color: #e4d0d0;
+  background-color: #9DB2BF; 
   color: black;
 }
 
 .my-nav {
-  background-color: #867070;
+  background-color: #526D82;
   color: white;
 }
 
 .my-nav .navbar-nav .nav-item .nav-link {
-  color: #f5ebeb;
+  color: #9DB2BF;
 }
 
 .my-nav .navbar-nav .nav-item .nav-link:hover,
@@ -29,20 +29,25 @@
 }
 
 .my-text-area{
-  background-color: #e4d0d0;
+  background-color: #9DB2BF;
   color: black;
+  border: 2px solid white;
 }
 
 .my-text-area:focus{
-  background-color: #e4d0d0;
+  background-color: #9DB2BF;
   color: black;
-  border: 2px solid black;
+  border: 2px solid white;
   box-shadow: none;
   outline: none;
 }
 
 .my-heading{
-  color: #867070;
+  color: #DDE6ED;
+}
+
+.text-data{
+  color: white;
 }
 
 .accordion-item .accordion-button {
@@ -52,25 +57,25 @@
 
 .accordion-item .accordion-button:not(.collapsed) {
   color: #fff; /* Set the desired text color when the accordion is expanded */
-  background-color: #867070; /* Set the desired background color when the accordion is expanded */
+  background-color: #27374D; /* Set the desired background color when the accordion is expanded */
 }
 
 .accordion-item{
-  background-color: #e4d0d0;
+  background-color: #9DB2BF;
 }
 
 .accordion-button{
-  background-color: #867070;
+  background-color: #27374D;
   border: 0px;
   color: white;
-  border: 2px solid #f5ebeb;
+  border: 2px solid white;
 }
 
 .accordion-button:focus{
-  background-color: #867070;
+  background-color: #27374D;
   border: 0px;
   color: white;
-  border: 2px solid black;
+  border: 2px solid white;
   outline: none;
   box-shadow: none;
 }

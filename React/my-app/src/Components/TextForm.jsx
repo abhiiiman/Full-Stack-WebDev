@@ -59,12 +59,12 @@ const TextForm = (props) => {
 
             <div className="container my-3">
                 <h2 className='my-heading'><strong>Your Text Summary</strong></h2>
-                <p><strong>{inputText.split(" ").length}</strong> Words and <strong>{inputText.length}</strong> Characters</p>
-                <label><strong>{0.008 * inputText.split(" ").length}</strong> Minute Read</label>
+                <p className='text-data'><strong>{inputText.split(" ").length}</strong> Words and <strong>{inputText.length}</strong> Characters</p>
+                <label className='text-data'><strong>{0.008 * inputText.split(" ").length}</strong> Minute Read</label>
             </div>
             <div className="container my-3">
                 <h3 className='my-heading'>Preview</h3>
-                <p><strong>{inputText}</strong></p>
+                <p className='text-data'><strong>{inputText}</strong></p>
             </div>
             <button className="my-btns btn">Enable Dark Mode</button>
         </div>
