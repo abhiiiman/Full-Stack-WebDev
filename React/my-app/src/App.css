@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+.light-theme {
+  --light-bg-color: #f5ebeb;
+  --light-nav-color: #867070;
+  background-color: #f5ebeb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.my-btns {
+  background-color: #867070;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.my-btns:hover{
+  background-color: #e4d0d0;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-nav {
+  background-color: #867070;
+  color: white;
+}
+
+.my-nav .navbar-nav .nav-item .nav-link {
+  color: #f5ebeb;
+}
+
+.my-nav .navbar-nav .nav-item .nav-link:hover,
+.my-nav .navbar-nav .nav-item .nav-link:focus {
+  color: white;
+}
+
+.my-text-area{
+  background-color: #e4d0d0;
+  color: black;
+}
+
+.my-text-area:focus{
+  background-color: #e4d0d0;
+  color: black;
+  border: 2px solid black;
+  box-shadow: none;
+  outline: none;
+}
+
+.my-heading{
+  color: #867070;
+}
+
+.accordion-item .accordion-button {
+  background-color: transparent; /* Remove the default background color */
+  color: #000; /*Set the desired text color*/
+}
+
+.accordion-item .accordion-button:not(.collapsed) {
+  color: #fff; /* Set the desired text color when the accordion is expanded */
+  background-color: #867070; /* Set the desired background color when the accordion is expanded */
+}
+
+.accordion-item{
+  background-color: #e4d0d0;
+}
+
+.accordion-button{
+  background-color: #867070;
+  border: 0px;
+  color: white;
+  border: 2px solid #f5ebeb;
+}
+
+.accordion-button:focus{
+  background-color: #867070;
+  border: 0px;
+  color: white;
+  border: 2px solid black;
+  outline: none;
+  box-shadow: none;
 }
