@@ -1,81 +1,122 @@
+:root {
+  --dark-first: #27374d;
+  --dark-second: #526d82;
+  --dark-third: #9db2bf;
+  --dark-fourth: #dde6ed;
+  --dark-color-first: black;
+  --dark-color-second: white;
+
+  /* https://colorhunt.co/palette/867070d5b4b4e4d0d0f5ebeb */
+
+  --light-first: #f5ebeb;
+  --light-second: #867070;
+  --light-third: #e4d0d0;
+  --light-fourth: #d5b4b4;
+  --light-color-first: white;
+  --light-color-second: black;
+}
+
+[data-theme="dark"] {
+  --dark-first: #27374d;
+  --dark-second: #526d82;
+  --dark-third: #9db2bf;
+  --dark-fourth: #dde6ed;
+  --dark-color-first: black;
+  --dark-color-second: white;
+}
+
+[data-theme="light"] {
+  --light-first: #f5ebeb;
+  --light-second: #867070;
+  --light-third: #e4d0d0;
+  --light-fourth: #d5b4b4;
+  --light-color-first: white;
+  --light-color-second: black;
+}
+
 .light-theme {
-  --light-bg-color: #27374D;
-  --light-nav-color: #867070;
-  background-color: #27374D;
+  background-color: var(--light-first);
+}
+
+.dark-theme {
+  background-color: var(--dark-first);
 }
 
 .my-btns {
-  background-color: #526D82;
-  color: white;
+  background-color: var(--dark-second);
+  color: var(--dark-color-second);
 }
 
-.my-btns:hover{
-  background-color: #9DB2BF; 
-  color: black;
+.my-btns:hover {
+  background-color: var(--dark-third);
+  color: var(--dark-color-first);
 }
 
 .my-nav {
-  background-color: #526D82;
-  color: white;
+  background-color: var(--dark-second);
+  color: var(--dark-color-second);
 }
 
 .my-nav .navbar-nav .nav-item .nav-link {
-  color: #9DB2BF;
+  color: var(--dark-third);
 }
 
 .my-nav .navbar-nav .nav-item .nav-link:hover,
 .my-nav .navbar-nav .nav-item .nav-link:focus {
-  color: white;
+  color: var(--dark-color-second);
 }
 
-.my-text-area{
-  background-color: #9DB2BF;
-  color: black;
-  border: 2px solid white;
+.my-text-area {
+  background-color: var(--dark-third);
+  color: var(--dark-color-first);
+  border: 2px solid var(--dark-color-second);
+  font-weight: bold;
+  letter-spacing: 1.1px;
 }
 
-.my-text-area:focus{
-  background-color: #9DB2BF;
-  color: black;
-  border: 2px solid white;
+.my-text-area:focus {
+  background-color: var(--dark-third);
+  color: var(--dark-color-first);
+  border: 2px solid var(--dark-color-second);
   box-shadow: none;
   outline: none;
 }
 
-.my-heading{
-  color: #DDE6ED;
+.my-heading {
+  color: var(--dark-fourth);
 }
 
-.text-data{
-  color: white;
+.text-data {
+  color: var(--dark-color-second);
+  letter-spacing: 1.1px;
 }
 
 .accordion-item .accordion-button {
-  background-color: transparent; /* Remove the default background color */
-  color: #000; /*Set the desired text color*/
+  background-color: transparent;
+  color: var(--dark-color-first);
 }
 
 .accordion-item .accordion-button:not(.collapsed) {
-  color: #fff; /* Set the desired text color when the accordion is expanded */
-  background-color: #27374D; /* Set the desired background color when the accordion is expanded */
+  color: var(--dark-color-second);
+  background-color: var(--dark-first);
 }
 
-.accordion-item{
-  background-color: #9DB2BF;
+.accordion-item {
+  background-color: var(--dark-third);
 }
 
-.accordion-button{
-  background-color: #27374D;
+.accordion-button {
+  background-color: var(--dark-first);
   border: 0px;
-  color: white;
-  border: 2px solid white;
+  color: var(--dark-color-second);
+  border: 2px solid var(--dark-color-second);
 }
 
-.accordion-button:focus{
-  background-color: #27374D;
+.accordion-button:focus {
+  background-color: var(--dark-first);
   border: 0px;
-  color: white;
-  border: 2px solid white;
+  color: var(--dark-color-second);
+  border: 2px solid var(--dark-color-second);
   outline: none;
   box-shadow: none;
 }

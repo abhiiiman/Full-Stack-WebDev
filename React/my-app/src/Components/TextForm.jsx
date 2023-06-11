@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "C:/Users/DELL/OneDrive/Desktop/WebDev/React/my-app/src/App.css";
+import "../App.css";
 
 const TextForm = (props) => {
 
@@ -66,7 +66,6 @@ const TextForm = (props) => {
                 <h3 className='my-heading'>Preview</h3>
                 <p className='text-data'><strong>{inputText}</strong></p>
             </div>
-            <button className="my-btns btn">Enable Dark Mode</button>
         </div>
     )
 }

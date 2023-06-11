@@ -1,4 +1,6 @@
 import "C:/Users/DELL/OneDrive/Desktop/WebDev/React/my-app/src/App.css";
+import "../App.css";
+
 const About = () => {
 
     return (
