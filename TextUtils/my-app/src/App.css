@@ -30,11 +30,6 @@
   background: var(--dark-third);
 } */
 
-::-webkit-scrollbar{
-  display: none;
-  overflow-y: hidden;
-}
-
 .light-theme {
   background-color: var(--light-first);
 }

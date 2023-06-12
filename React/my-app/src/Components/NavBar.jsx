@@ -2,28 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import "../App.css";
+import "../App.jsx";
 
 const NavBar = (props) => {
 
-    const [theme, setTheme] = useState("dark-theme");
-    const toggleTheme = () => {
-        if (theme === "dark-theme"){
-            setTheme("light-theme");
-            console.log("switched dark to light");
-        }
-        else{
-            setTheme("dark-theme");
-            console.log("switched light to dark");
-        }
-    };
-
-    useEffect(() => {
-      document.body.className = theme;
-    }, [theme])
-    
-
     return (
-        <nav className="my-nav navbar navbar-expand-lg" data-theme = {theme}>
+        <nav className="my-nav navbar navbar-expand-lg">
             <div className="container-fluid">
                 <a className="my-nav navbar-brand" href="/">
                     <i class=" fa-solid fa-message-text fa-beat-fade"></i>
@@ -55,8 +39,8 @@ const NavBar = (props) => {
                         </li>
                     </ul>
                     <div className="form-check form-switch">
-                        <input className="form-check-input" onClick = {toggleTheme} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Light Mode</label>
+                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.text}</label>
                     </div>
                 </div>
             </div>
