@@ -61,6 +61,26 @@ const TextForm = (props) => {
         return words;
     }
 
+    const readTimeCount = (str) => {
+        let time = 0;
+        if (str === 0){
+            time = 0;
+        }
+        else{
+            time = (wordCount(inputText)/130).toFixed(1);
+        }
+        return time;
+    }
+
+    const previewText = (str) => {
+        if (str === ""){
+            return "Enter something above to preview here."
+        }
+        else{
+            return str;
+        }
+    }
+
     const [inputText, setInputText] = useState("");
 
     return (
@@ -82,11 +102,11 @@ const TextForm = (props) => {
             <div className="container my-3">
                 <h2 className='my-heading'><strong>Your Text Summary</strong></h2>
                 <p className='text-data'><strong>{wordCount(inputText)}</strong> Words and <strong>{inputText.length}</strong> Characters</p>
-                <label className='text-data'><strong>{0.008 * inputText.split(" ").length}</strong> Minute Read</label>
+                <label className='text-data'><strong>{readTimeCount(inputText)}</strong> Minute Read</label>
             </div>
             <div className="container my-3">
                 <h3 className='my-heading'>Preview</h3>
-                <p className='text-data'><strong>{inputText}</strong></p>
+                <p className='text-data'><strong>{previewText(inputText)}</strong></p>
             </div>
         </div>
     )
