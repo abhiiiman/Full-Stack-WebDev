@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import "../App.css";
-// import "C:/Users/DELL/OneDrive/Desktop/WebDev/React/my-app/src/App.css";
 
 const TextForm = (props) => {
 
     const upperOnClick = () => {
         let upperText = inputText.toUpperCase();
         setInputText(upperText);
+        props.showAlert("Text has been converted to uppercase!", "Success");
     }
 
     const lowerOnClick = () => {
         let lowerText = inputText.toLowerCase();
         setInputText(lowerText);
+        props.showAlert("Text has been converted to lowercase!", "Success");
     }
 
     const clearOnClick = () => {
         setInputText("");
+        props.showAlert("Textarea has been cleared now!", "Success");
     }
 
     const readOnClick = () => {
@@ -28,11 +30,19 @@ const TextForm = (props) => {
         var getText = document.getElementById("text-area");
         getText.select();
         navigator.clipboard.writeText(getText.value);
+        props.showAlert("Text copied to the clipboard!", "Success");
+        // if (str){
+        //     props.showAlert("Text copied to the clipboard!", "Success");
+        // }
+        // else{
+        //     props.showAlert("Nothing to copy, Texarea is Empty!", "Warning");
+        // }
     }
 
     const removeOnClick = () => {
         let noExtraSpaceText = inputText.split(/[ ]+/); // regex
         setInputText(noExtraSpaceText.join(" "));
+        props.showAlert("Extra spaces has been removed!", "Success");
     }
 
     const handleOnChange = (event) => {

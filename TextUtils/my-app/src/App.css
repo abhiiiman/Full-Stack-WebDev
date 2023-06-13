@@ -213,3 +213,11 @@
 #light .accordion-body{
     border: 2px solid var(--light-color-second);
 }
+
+#light .alert{
+  color: var(--light-color-second);
+}
+
+#dark .alert{
+  color: var(--light-color-first);
+}
