@@ -40,6 +40,17 @@ const TextForm = (props) => {
         setInputText(event.target.value)
     }
 
+    const wordCount = (str) => {
+        let words = 0;
+        if (str === ""){
+            words = 0;
+        }
+        else{
+            words = str.trim().split(/\s+/).length;
+        }
+        return words;
+    }
+
     const [inputText, setInputText] = useState("");
 
     return (
@@ -60,7 +71,7 @@ const TextForm = (props) => {
 
             <div className="container my-3">
                 <h2 className='my-heading'><strong>Your Text Summary</strong></h2>
-                <p className='text-data'><strong>{inputText.split(" ").length}</strong> Words and <strong>{inputText.length}</strong> Characters</p>
+                <p className='text-data'><strong>{wordCount(inputText)}</strong> Words and <strong>{inputText.length}</strong> Characters</p>
                 <label className='text-data'><strong>{0.008 * inputText.split(" ").length}</strong> Minute Read</label>
             </div>
             <div className="container my-3">
