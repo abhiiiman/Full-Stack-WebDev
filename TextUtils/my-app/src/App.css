@@ -40,10 +40,12 @@
 
 #light {
   background-color: var(--light-first);
+  height: 100vh;
 }
 
 #dark {
   background-color: var(--dark-first);
+  height: 100vh;
 }
 
 #dark .my-btns {
