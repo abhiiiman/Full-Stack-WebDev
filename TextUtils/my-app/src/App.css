@@ -223,3 +223,47 @@
 #dark .alert{
   color: var(--light-color-first);
 }
+
+#dark #footer {
+    font-family: "poppins";
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--dark-color-second);
+}
+
+#dark .social-icon {
+    padding: 20px 10px;
+    font-size: 2rem;
+    color: var(--dark-fourth);
+}
+
+#dark .social-icon:hover {
+    color: var(--dark-second);
+}
+
+#dark #heart {
+    color: var(--dark-fourth);
+    padding: 5px;
+}
+
+#light #footer {
+    font-family: "poppins";
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--light-second);
+}
+
+#light .social-icon {
+    padding: 20px 10px;
+    font-size: 2rem;
+    color: var(--light-second);
+}
+
+#light .social-icon:hover {
+    color: var(--light-fourth);
+}
+
+#light #heart {
+    color: red;
+    padding: 5px;
+}

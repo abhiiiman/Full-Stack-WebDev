@@ -4,6 +4,7 @@ import TextForm from "./Components/TextForm";
 import About from "./Components/About";
 import { createContext, useState } from "react";
 import Alert from "./Components/Alert";
+import Footer from "./Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export const ThemeContext = createContext(null);
@@ -47,6 +48,7 @@ function App() {
             <Route path="/" element={<TextForm textTitle="Enter your text below" showAlert={showAlert} />} />
             <Route path="About" element={<About />} />
           </Routes>
+          <Footer/>
         </div>
       </ThemeContext.Provider>
     </BrowserRouter>
