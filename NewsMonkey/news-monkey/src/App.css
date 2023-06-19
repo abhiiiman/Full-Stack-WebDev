@@ -1,0 +1,6 @@
+.read-btn{
+  transition: all 0.3s;
+}
+.read-btn:hover{
+  transform: scale(1.15);
+}

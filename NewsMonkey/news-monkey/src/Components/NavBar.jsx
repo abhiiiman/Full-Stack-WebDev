@@ -15,10 +15,34 @@ export class NavBar extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Home </a>
+                            <a className="nav-link" href="/">Trending </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">About </a>
+                            <a className="nav-link" href="/">Technology </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Space </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Travel </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Gaming </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Sports </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Health </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Entertainment </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">Politics </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/">International </a>
                         </li>
                     </ul>
                 </div>
