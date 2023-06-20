@@ -11,3 +11,17 @@
 .nav-link:hover{
   transform: scale(1.05);
 }
+
+.badge{
+  color: white;
+  /* background-color: transparent; */
+  font-size: small;
+}
+
+.card-title{
+  font-size: large;
+}
+
+.card-text{
+  font-size: small;
+}
