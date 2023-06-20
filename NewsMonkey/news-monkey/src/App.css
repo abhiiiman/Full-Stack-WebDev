@@ -4,3 +4,10 @@
 .read-btn:hover{
   transform: scale(1.15);
 }
+.nav-link{
+  transition: all 0.3s;
+}
+
+.nav-link:hover{
+  transform: scale(1.05);
+}

@@ -79,8 +79,8 @@ export class News extends Component {
                         </div>
                     })}
                     <div className="container my-3 mx-3 d-flex justify-content-between">
-                        <button disabled={this.state.page <= 1} type="button" className="btn btn-primary" onClick={this.handlePrevClick}>&larr; Prev</button>
-                        <button disabled={this.state.page > this.state.totalResults / this.props.pageSize} type="button" className="btn btn-primary" onClick={this.handleNextClick}>Next &rarr;</button>
+                        <button disabled={this.state.page <= 1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}>&larr; Prev</button>
+                        <button disabled={this.state.page > this.state.totalResults / this.props.pageSize} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
                     </div>
                 </div>
             </div>
