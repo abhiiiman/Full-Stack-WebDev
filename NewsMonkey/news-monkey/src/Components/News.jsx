@@ -68,12 +68,13 @@ export class News extends Component {
     }
 
     render() {
+        const { articles, loading } = this.state;
         return (
             <div className="container my-4">
                 <h1 className='heading text-center'>Top Headlines INDIA</h1>
                 {this.state.loading && <SpinLoader />}
                 <div className="row">
-                    {!this.state.loading && this.state.articles.map((element) => {
+                    {!loading && articles && articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
                             <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source = {element.source.name}/>
                         </div>
