@@ -17,13 +17,18 @@ export class News extends Component {
         category: PropTypes.string,
     }
 
-    constructor() {
-        super();
+    capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    constructor(props) {
+        super(props);
         this.state = {
             articles: [],
             loading: false,
             page: 1
         }
+        document.title = `NewsMonkey - ${this.capitalizeFirstLetter(this.props.category)}`;
     }
 
     async componentDidMount() {
@@ -70,13 +75,13 @@ export class News extends Component {
     render() {
         const { articles, loading } = this.state;
         return (
-            <div className="container my-4">
-                <h1 className='heading text-center'>Top Headlines INDIA</h1>
+            <div className="container mt-4">
+                <h1 className='heading text-center'>Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
                 {this.state.loading && <SpinLoader />}
-                <div className="row">
+                <div className="row gy-4">
                     {!loading && articles && articles.map((element) => {
-                        return <div className="col-md-4" key={element.url}>
-                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source = {element.source.name}/>
+                        return <div className="col-md-4 col-sm" key={element.url}>
+                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                         </div>
                     })}
                     <div className="container my-3 mx-3 d-flex justify-content-between">

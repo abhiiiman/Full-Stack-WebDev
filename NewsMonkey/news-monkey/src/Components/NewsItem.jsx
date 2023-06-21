@@ -5,8 +5,8 @@ export class NewsItem extends Component {
     render() {
         let { title, description, imageUrl, newsUrl, author, date, source } = this.props;
         return (
-            <div className="my-3">
-                <div className="card-box card">
+            <div className="container my-3">
+                <div className="card">
                     <span className="position-absolute top-0 translate-middle badge rounded-pill bg-dark">
                         <span className="visually-hidden">{source}</span>
                     </span>

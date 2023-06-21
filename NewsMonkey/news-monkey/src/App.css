@@ -4,6 +4,12 @@
 .read-btn:hover{
   transform: scale(1.15);
 }
+.logo{
+  transition: all 0.3s;
+}
+.logo:hover{
+  transform: scale(1.05);
+}
 .nav-link{
   transition: all 0.3s;
 }
