@@ -3,4 +3,4 @@
 # NewsMonkey UI Update
 ![image](https://github.com/abhiiiman/Full-Stack-WebDev/assets/111262410/d5a0662e-acef-4a94-ba8b-120b53949bd5)
 # NewsMonkey UI Logo and Image not found .gif Update
-![image](https://github.com/abhiiiman/Full-Stack-WebDev/assets/111262410/6af1cb2b-919a-4b3d-ab62-745206666e5b)
+![image](https://github.com/abhiiiman/Full-Stack-WebDev/assets/111262410/b44affa5-759a-455b-83e0-0949a37b9005)
