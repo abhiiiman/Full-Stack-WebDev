@@ -10,7 +10,7 @@ export class NewsItem extends Component {
                     <span className="position-absolute top-0 translate-middle badge rounded-pill bg-dark">
                         <span className="visually-hidden">{source}</span>
                     </span>
-                    <img className="card-img-top" src={!imageUrl ? "https://www.mca.org.uk/wp-content/themes/consultix/images/no-image-found-360x260.png" : imageUrl} alt='' />
+                    <img className="card-img-top" src={!imageUrl ? "/Resources/imageNotFound.gif" : imageUrl} alt='' />
                     <div className="card-body">
                         <h5 className="card-title"><strong>{title}</strong></h5>
                         <p className="card-text">{description}</p>
