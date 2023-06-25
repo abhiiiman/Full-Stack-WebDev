@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import SpinLoader from './SpinLoader';
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
+import ButtonTop from './ButtonTop';
 
 export class News extends Component {
 
@@ -9,6 +11,7 @@ export class News extends Component {
         country: "in",
         pageSize: 6,
         category: "general",
+        totalResults: 0
     }
 
     static propTypes = {
@@ -31,67 +34,75 @@ export class News extends Component {
         document.title = `NewsMonkey - ${this.capitalizeFirstLetter(this.props.category)}`;
     }
 
-    async componentDidMount() {
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4b7a1b7e835c4f98bec0b3a4fc8051e9&pageSize=${this.props.pageSize}`;
+    fetchMoreData = async () => {
+        this.setState({ page: this.state.page + 1 });
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4b7a1b7e835c4f98bec0b3a4fc8051e9&pageSize=${this.props.pageSize}&page=${this.state.page + 1}`;
+        let data = await fetch(url);
+        let parsedData = await data.json();
+
+        // Filter out duplicate articles
+        const newArticles = parsedData.articles.filter(article => !this.state.articles.some(existingArticle => existingArticle.url === article.url));
+
+        this.setState(prevState => ({
+            articles: [...prevState.articles, ...newArticles],
+            totalResults: parsedData.totalResults,
+            loading: false
+        }));
+    };
+
+
+
+    async updateNews() {
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4b7a1b7e835c4f98bec0b3a4fc8051e9&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true });
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false })
-    }
+    };
 
-    handleNextClick = async () => {
-        console.log("Next Page");
-        if (this.state.page > this.state.totalResults / this.props.pageSize) {
-            // do nothing.
-        }
-        else {
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4b7a1b7e835c4f98bec0b3a4fc8051e9&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-            this.setState({ loading: true });
-            let data = await fetch(url);
-            let parsedData = await data.json();
-            this.setState({ articles: parsedData.articles })
-            this.setState({
-                page: this.state.page + 1,
-                articles: parsedData.articles,
-                loading: false
-            })
-        }
-    }
-
-    handlePrevClick = async () => {
-        console.log("Prev Page")
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4b7a1b7e835c4f98bec0b3a4fc8051e9&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
-        this.setState({ loading: true });
-        let data = await fetch(url);
-        let parsedData = await data.json();
-        this.setState({ articles: parsedData.articles })
-        this.setState({
-            page: this.state.page - 1,
-            articles: parsedData.articles,
-            loading: false
-        })
-    }
+    async componentDidMount() {
+        this.updateNews();
+    };
 
     render() {
         const { articles, loading } = this.state;
         return (
             <div className="container mt-4">
                 <h1 className='heading text-center'>Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
-                {this.state.loading && <SpinLoader />}
-                <div className="row gy-4">
-                    {!loading && articles && articles.map((element) => {
-                        return <div className="col-md-4 col-sm" key={element.url}>
-                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
-                        </div>
-                    })}
-                    <div className="container my-3 mx-3 d-flex justify-content-between">
-                        <button disabled={this.state.page <= 1} type="button" className="btn btn-dark" onClick={this.handlePrevClick}>&larr; Prev</button>
-                        <button disabled={this.state.page > this.state.totalResults / this.props.pageSize} type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
+                <InfiniteScroll
+
+                    dataLength={articles ? articles.length : 0}
+                    next={this.fetchMoreData}
+                    hasMore={articles && articles.length !== this.state.totalResults}
+                    loader={<SpinLoader />}
+                    scrollableTarget="scrollableDiv">
+
+                    <div className="row">
+                        {!loading && (articles && articles.length > 0 ? (articles.map((element) => (
+                            <div className="col-md-4 col-sm" key={element.url}>
+                                <NewsItem
+                                    title={element.title}
+                                    description={element.description}
+                                    imageUrl={element.urlToImage}
+                                    newsUrl={element.url}
+                                    author={element.author}
+                                    date={element.publishedAt}
+                                    source={element.source.name}
+                                />
+                            </div>
+                        ))) : (
+                            <div className="errorMsg container text-center">
+                                {/* <p>No articles to display</p>
+                                <p><strong>API Error : 429</strong></p> */}
+                                <img src="/Resources/APIErrorImage.gif" alt="error_image" />
+                            </div>
+                        ))}
                     </div>
-                </div>
+                </InfiniteScroll>
+                <ButtonTop />
             </div>
-        )
+        );
     }
 }
 
-export default News
+export default News;

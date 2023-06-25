@@ -10,13 +10,13 @@ export default class App extends Component {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<News pageSize={6} key="general" category="general" country="in" />} />
-          <Route exact path="/business" element={<News pageSize={6} key="business" category="business" country="in" />} />
-          <Route exact path="/entertainment" element={<News pageSize={6} key="entertainment" category="entertainment" country="in" />} />
-          <Route exact path="/sports" element={<News pageSize={6} key="sports" category="sports" country="in" />} />
-          <Route exact path="/health" element={<News pageSize={6} key="health" category="health" country="in" />} />
-          <Route exact path="/science" element={<News pageSize={6} key="science" category="science" country="in" />} />
-          <Route exact path="/technology" element={<News pageSize={6} key="technology" category="technology" country="in" />} />
+          <Route exact path="/" element={<News pageSize={9} key="general" category="general" country="in" />} />
+          <Route exact path="/business" element={<News pageSize={9} key="business" category="business" country="in" />} />
+          <Route exact path="/entertainment" element={<News pageSize={9} key="entertainment" category="entertainment" country="in" />} />
+          <Route exact path="/sports" element={<News pageSize={9} key="sports" category="sports" country="in" />} />
+          <Route exact path="/health" element={<News pageSize={9} key="health" category="health" country="in" />} />
+          <Route exact path="/science" element={<News pageSize={9} key="science" category="science" country="in" />} />
+          <Route exact path="/technology" element={<News pageSize={9} key="technology" category="technology" country="in" />} />
         </Routes>
       </BrowserRouter>
     )
