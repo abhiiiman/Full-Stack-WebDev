@@ -16,6 +16,12 @@ export default class App extends Component {
     this.setState({ progress: progress })
   }
 
+  toggleTheme = () => {
+    this.setState((prevState) => ({
+      theme: prevState.theme === 'light' ? 'dark' : 'light',
+    }));
+  };
+
   render() {
     return (
       <BrowserRouter>

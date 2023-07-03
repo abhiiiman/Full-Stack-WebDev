@@ -1,7 +1,22 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+// import ReactSwitch from 'react-switch';
+import "../App.jsx";
 
 export class NavBar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: 'dark',
+        };
+    }
+
+    toggleTheme = () => {
+        this.setState((prevState) => ({
+            theme: prevState.theme === 'light' ? 'dark' : 'light',
+        }));
+    };
 
     render() {
         return (
@@ -37,6 +52,11 @@ export class NavBar extends Component {
                             <Link className="nav-link" to="entertainment">Entertainment </Link>
                         </li>
                     </ul>
+
+                    {/* <div className="switch">
+                        <ReactSwitch onChange={this.toggleTheme} checked={this.state.theme === "dark"} />
+                    </div> */}
+
                 </div>
             </nav>
         )

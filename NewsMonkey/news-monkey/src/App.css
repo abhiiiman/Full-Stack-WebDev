@@ -1,8 +1,17 @@
+*{
+  scroll-behavior: smooth;
+}
 .read-btn {
   transition: all 0.3s;
+  /* background-color: #EEB16B; */
+  /* color: #642F18; */
+  /* border-color: #642F18;
+  background-color: #642F18; */
 }
 .read-btn:hover {
   transform: scale(1.15);
+  /* border-color: #642F18;
+  background-color: #642F18; */
 }
 .logo {
   transition: all 0.3s;
